@@ -2,37 +2,50 @@
 import './index.css'
 
 const CommentItem = props => {
-  const {itemDetails} = props
+  const {itemDetails, likedButton, deleteButton} = props
+  const {name, comment, color, id, liked, duration} = itemDetails
+
+  const buttonClicked = () => {
+    likedButton(id)
+  }
+
+  const deleteButtonClicked = () => {
+    deleteButton(id)
+  }
+
+  const likedImage = liked
+    ? 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
+    : 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
+
   return (
-    <div className="item-container">
+    <li className="item-container">
       <div className="comments-container">
         <div className="person-comment-container">
-          <p className="round-name">s</p>
+          <p className={`round-name ${color}`}>{name[0].toUpperCase()}</p>
           <div className="description-container">
             <div className="name-container">
-              <h1 className="person-name">Ravi Kiran Rathod</h1>
-              <p className="time-styling">2 minutes ago</p>
+              <h1 className="person-name">{name}</h1>
+              <p className="time-styling">{duration}</p>
             </div>
-            <p className="description-para">
-              some random text that is shown on the display of the web
-            </p>
+            <p className="description-para">{comment}</p>
           </div>
         </div>
       </div>
       <div className="like-dislike-container">
         <div className="like-container">
           <div>
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png"
-              alt="disLike"
-              className="image-sizing"
-            />
-            <button type="button" className="button">
+            <img src={likedImage} alt="disLike" className="image-sizing" />
+            <button type="button" className="button" onClick={buttonClicked}>
               Like
             </button>
           </div>
         </div>
-        <button type="button" className="button-new">
+        <button
+          type="button"
+          className="button-new"
+          onClick={deleteButtonClicked}
+          data-testid="delete"
+        >
           <img
             src="https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png"
             alt="delete"
@@ -41,7 +54,7 @@ const CommentItem = props => {
         </button>
       </div>
       <hr className="line" />
-    </div>
+    </li>
   )
 }
 

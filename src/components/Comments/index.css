@@ -1,0 +1,84 @@
+/* Write your CSS here */
+.background-container {
+  background-color: white;
+  padding: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.comments-heading {
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1e293b;
+}
+.userInput-image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-input-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.para {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 600;
+  color: #475569;
+  line-height: 80%;
+}
+.user-input {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 15;
+  font-family: Roboto;
+  color: #dee0e3;
+}
+.text-area-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  font-family: Roboto;
+  color: #dee0e3;
+}
+.button {
+  align-self: flex-start;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #0284c7;
+  color: white;
+  font-family: Roboto;
+  border-color: #475569;
+}
+.image-container {
+  width: 30%;
+  display: flex;
+  align-items: flex-start;
+}
+.line {
+  border: 1px solid #dee0e3;
+  width: 100%;
+  margin-top: 16px;
+}
+.count-of-comments {
+  display: flex;
+  align-items: center;
+}
+.count-para {
+  background-color: #0284c7;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-family: Roboto;
+  margin-right: 10px;
+}
+.count-comment-para {
+  font-family: Roboto;
+  font-weight: 600;
+  color: #475569;
+}
